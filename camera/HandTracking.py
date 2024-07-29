@@ -1,6 +1,6 @@
+import time
 import cv2
 import mediapipe as mp
-import time
 
 cap = cv2.VideoCapture(0)
 
@@ -38,3 +38,12 @@ while True:
 
     cv2.imshow("Image", img)
     cv2.waitKey(1)
+    
+    if cv2.waitKey(1) & 0xFF == ord("q"):
+        break
+
+# After the loop release the cap object
+cap.release()
+# Destroy all the windows
+cv2.destroyAllWindows()
+
